@@ -1,6 +1,6 @@
 export const MAX_WIDTH = 1280;
 
-export const SideBarMenu = [
+export const sideData = [
   {
     section: "Work",
     articles: [

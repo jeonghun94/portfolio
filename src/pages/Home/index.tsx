@@ -1,15 +1,39 @@
 import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
 import bg from "@/assets/bg.jpg";
 import { AiOutlineCheck } from "react-icons/ai";
 import { IoMdLink } from "react-icons/io";
 import { FaPencilAlt } from "react-icons/fa";
-import { SideBarMenu, data } from "../../utils/constants";
-import { motion, AnimatePresence } from "framer-motion";
+import { sideData, data } from "../../utils/constants";
 
-const Container = styled.div`
+const Wrapper = styled.div`
   display: flex;
   width: 100%;
+  flex-direction: column;
+`;
+
+const ProfileWrapper = styled.div`
+  // position: relative;
+  width: 100%;
   height: 100vh;
+  display: flex;
+`;
+
+const ProfileIntroduceWrapper = styled.div`
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+`;
+
+const ContentWrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: white;
 `;
 
 const SideBar = styled.div<{ bgColor?: string }>`
@@ -21,7 +45,6 @@ const SideBar = styled.div<{ bgColor?: string }>`
   padding: 100px 75px;
   box-sizing: border-box;
   background-color: ${(props) => props.bgColor || "transparent"};
-
   @media (max-width: 992px) {
     display: none;
   }
@@ -55,12 +78,6 @@ const SectionContent = styled.div`
   color: rgb(110, 110, 110);
   font-size: 13px;
   gap: 5px;
-`;
-
-const Info = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
 `;
 
 const IntroWrapper = styled.div`
@@ -157,6 +174,16 @@ const InfoLinkWrapper = styled(motion.div)`
   font-size: 2rem;
   cursor: pointer;
   padding: 10px 20px;
+
+  background: linear-gradient(to right, transparent 50%, #0079ff 50%);
+  background-size: 200%;
+  background-position: 0 0;
+
+  transition: 0.25s ease;
+
+  :hover {
+    background-position: -100% 0;
+  }
 `;
 
 const InfoLinkTitle = styled.span`
@@ -182,9 +209,11 @@ const InfoBottom = styled.div`
 const ArticleWrapper = styled.div`
   width: 80%;
   height: 100vh;
+  padding: 60px;
   overflow-y: scroll;
   box-sizing: border-box;
-  padding: 60px;
+  background-color: white;
+  z-index: 1;
 
   @media (max-width: 992px) {
     width: 100%;
@@ -303,51 +332,17 @@ const BackgroundImg = styled.img`
 
 const Home = () => {
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          height: "100vh",
-          display: "flex",
-          position: "relative",
-          zIndex: -1,
-        }}
-      >
+    <Wrapper>
+      <ProfileWrapper>
         <SideBar bgColor={"#202224"}>
           <InfoWrapper>
             <InfoTop>
               <AnimatePresence>
-                <InfoLinkWrapper
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ delay: 0.5 }}
-                  whileHover={{
-                    background: "linear-gradient(to right, #0079ff, #0079ff)",
-                    color: "black",
-                    transition: { duration: 0.5, delay: 0.2 },
-                  }}
-                >
+                <InfoLinkWrapper initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
                   <InfoLinkTitle>GitHub</InfoLinkTitle>
                   <BlueDot />
                 </InfoLinkWrapper>
-                <InfoLinkWrapper
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ delay: 0.6 }}
-                  whileHover={{
-                    background: "linear-gradient(to right, #0079ff, #0079ff)",
-                    color: "black",
-                    transition: { duration: 0.5 },
-                  }}
-                >
+                <InfoLinkWrapper initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>
                   <InfoLinkTitle>Velog</InfoLinkTitle>
                   <BlueDot />
                 </InfoLinkWrapper>
@@ -359,22 +354,12 @@ const Home = () => {
             </InfoBottom>
           </InfoWrapper>
         </SideBar>
-        <div
-          style={{
-            width: "80%",
-            height: "100%",
-            backgroundColor: "black",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "white",
-          }}
-        >
+
+        <ProfileIntroduceWrapper>
           <IntroWrapper>
             <IntroTitle>도전과 개발을 즐기는</IntroTitle>
             <IntroSubTitle>
-              <span>조정훈</span>
-              입니다.
+              <span>조정훈</span> 입니다.
             </IntroSubTitle>
             <IntroDescriptionWrapper>
               <IntroDescription>다른 사람들과 함께 협력하고 소통하는 것을 소중히 여깁니다.</IntroDescription>
@@ -382,20 +367,13 @@ const Home = () => {
               <IntroDescription>새로운 도전에 기꺼이 나서는 자세를 갖추고 있습니다.</IntroDescription>
             </IntroDescriptionWrapper>
           </IntroWrapper>
-        </div>
+        </ProfileIntroduceWrapper>
         <BackgroundImg src={`${bg}`} alt="bg" draggable={false} />
-      </div>
+      </ProfileWrapper>
 
-      <div
-        style={{
-          width: "100%",
-          height: "100vh",
-          backgroundColor: "white",
-          display: "flex",
-        }}
-      >
+      <ContentWrapper>
         <SideBar bgColor={"#F9FAFB"}>
-          {SideBarMenu.map((item, index) => {
+          {sideData.map((item, index) => {
             return (
               <Section key={index}>
                 <SectionTitle>{item.section}</SectionTitle>
@@ -462,8 +440,8 @@ const Home = () => {
             );
           })}
         </ArticleWrapper>
-      </div>
-    </div>
+      </ContentWrapper>
+    </Wrapper>
   );
 };
 

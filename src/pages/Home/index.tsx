@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import bg from "@/assets/bg.jpg";
 import { AiOutlineCheck } from "react-icons/ai";
 import { IoMdLink } from "react-icons/io";
 import { FaPencilAlt } from "react-icons/fa";
-import { sideData, data } from "../../utils/constants";
+import { sideData, data, infoData, containerVariants, linkVariants } from "../../utils/constants";
 
 const Wrapper = styled.div`
   display: flex;
@@ -71,7 +71,7 @@ const SectionTitle = styled.h3`
   margin: 10px 0;
 `;
 
-const SectionContent = styled.div`
+const SectionContent = styled(motion.a)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -150,13 +150,13 @@ const Dot = styled.div`
   background-color: rgb(110, 110, 110);
 `;
 
-const BlueDot = styled.div`
-  width: 10px;
-  height: 10px;
+const BlueDot = styled.div<{ size?: number; marginBottom?: number }>`
+  width: ${(props) => (props.size ? props.size : "10")}px;
+  height: ${(props) => (props.size ? props.size : "10")}px;
   border-radius: 50%;
   background-color: #0079ff;
   align-self: flex-end;
-  margin-bottom: 5px;
+  margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 5)}px;
 `;
 
 const InfoWrapper = styled.div`
@@ -186,13 +186,14 @@ const InfoLinkWrapper = styled(motion.div)`
   }
 `;
 
-const InfoLinkTitle = styled.span`
+const InfoLinkTitle = styled.a`
   font-size: 30px;
   font-weight: 800;
+  margin-right: 3px;
   color: white;
 `;
 
-const InfoTop = styled.div`
+const InfoTop = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -336,17 +337,15 @@ const Home = () => {
       <ProfileWrapper>
         <SideBar bgColor={"#202224"}>
           <InfoWrapper>
-            <InfoTop>
-              <AnimatePresence>
-                <InfoLinkWrapper initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-                  <InfoLinkTitle>GitHub</InfoLinkTitle>
-                  <BlueDot />
-                </InfoLinkWrapper>
-                <InfoLinkWrapper initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>
-                  <InfoLinkTitle>Velog</InfoLinkTitle>
-                  <BlueDot />
-                </InfoLinkWrapper>
-              </AnimatePresence>
+            <InfoTop variants={containerVariants} initial="start" animate="end">
+              {infoData.map((item, index) => {
+                return (
+                  <InfoLinkWrapper variants={linkVariants} key={index}>
+                    <InfoLinkTitle href={item.link}>{item.title}</InfoLinkTitle>
+                    <BlueDot size={8} marginBottom={3} />
+                  </InfoLinkWrapper>
+                );
+              })}
             </InfoTop>
 
             <InfoBottom>
@@ -379,7 +378,13 @@ const Home = () => {
                 <SectionTitle>{item.section}</SectionTitle>
                 {item.articles.map((item, index) => {
                   return (
-                    <SectionContent key={index}>
+                    <SectionContent
+                      key={index}
+                      href={`#${item.id}`}
+                      whileHover={{
+                        color: "#0079FF",
+                      }}
+                    >
                       <Dot />
                       <span>{item.title}</span>
                     </SectionContent>
@@ -402,7 +407,7 @@ const Home = () => {
                   return (
                     <InnerArticle key={index}>
                       <InnerArticleSutTitle>{item.subTitle}</InnerArticleSutTitle>
-                      <InnerArticleTitle>{item.innerTitle}</InnerArticleTitle>
+                      <InnerArticleTitle id={item.id}>{item.innerTitle}</InnerArticleTitle>
                       <InnerArticleIcon>{item.icon}</InnerArticleIcon>
                       <InnerArticleDate>{item.date}</InnerArticleDate>
 

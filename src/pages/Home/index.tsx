@@ -341,7 +341,9 @@ const Home = () => {
               {infoData.map((item, index) => {
                 return (
                   <InfoLinkWrapper variants={linkVariants} key={index}>
-                    <InfoLinkTitle href={item.link}>{item.title}</InfoLinkTitle>
+                    <InfoLinkTitle href={item.link} target="_blank">
+                      {item.title}
+                    </InfoLinkTitle>
                     <BlueDot size={8} marginBottom={3} />
                   </InfoLinkWrapper>
                 );

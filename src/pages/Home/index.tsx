@@ -45,6 +45,7 @@ const SideBar = styled.div<{ bgColor?: string }>`
   padding: 100px 75px;
   box-sizing: border-box;
   background-color: ${(props) => props.bgColor || "transparent"};
+
   @media (max-width: 992px) {
     display: none;
   }

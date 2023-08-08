@@ -29,6 +29,7 @@ export const GlobalStyle = createGlobalStyle`
       html {
         font-family: "NEXON Lv2 Gothic";
         height: -webkit-fill-available;
+        scroll-behavior: smooth;
       }
 
       a {

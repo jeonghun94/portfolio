@@ -4,7 +4,11 @@ import bg from "@/assets/bg.jpg";
 import { AiOutlineCheck } from "react-icons/ai";
 import { IoMdLink } from "react-icons/io";
 import { FaPencilAlt } from "react-icons/fa";
-import { sideData, data, infoData, containerVariants, linkVariants } from "../../utils/constants";
+import { data, containerVariants, linkVariants } from "../../utils/constants";
+import SkillBadge from "../../components/SkillBadge";
+import { skills } from "../../db/skill";
+import { sections } from "../../db/section";
+import { infoLinks } from "../../db/infoLink";
 
 const Wrapper = styled.div`
   display: flex;
@@ -264,7 +268,8 @@ const InnerArticleTitle = styled.h3`
   margin: 20px 0;
   font-size: 2rem;
   font-weight: 800;
-  text-decoration: underline;
+  padding-bottom: 3px;
+  border-bottom: 3px solid black;
 `;
 
 const InnerArticleIcon = styled.span`
@@ -332,6 +337,13 @@ const BackgroundImg = styled.img`
   object-fit: cover;
 `;
 
+const SkillWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+`;
+
 const Home = () => {
   return (
     <Wrapper>
@@ -339,11 +351,11 @@ const Home = () => {
         <SideBar bgColor={"#202224"}>
           <InfoWrapper>
             <InfoTop variants={containerVariants} initial="start" animate="end">
-              {infoData.map((item, index) => {
+              {infoLinks.map((infoLink, index) => {
                 return (
                   <InfoLinkWrapper variants={linkVariants} key={index}>
-                    <InfoLinkTitle href={item.link} target="_blank">
-                      {item.title}
+                    <InfoLinkTitle href={infoLink.link} target="_blank">
+                      {infoLink.title}
                     </InfoLinkTitle>
                     <BlueDot size={8} marginBottom={3} />
                   </InfoLinkWrapper>
@@ -375,11 +387,11 @@ const Home = () => {
 
       <ContentWrapper>
         <SideBar bgColor={"#F9FAFB"}>
-          {sideData.map((item, index) => {
+          {sections.map((item, index) => {
             return (
               <Section key={index}>
-                <SectionTitle>{item.section}</SectionTitle>
-                {item.articles.map((item, index) => {
+                <SectionTitle>{item.title}</SectionTitle>
+                {item.items.map((item, index) => {
                   return (
                     <SectionContent
                       key={index}
@@ -440,6 +452,13 @@ const Home = () => {
                         <InnerArticleContentTitle>
                           <MiddelFaPencilAlt /> 사용기술들
                         </InnerArticleContentTitle>
+
+                        <SkillWrapper>
+                          {item.skills?.map((skillId, index) => {
+                            const skillData = skills.find((item) => item.id === skillId.skillId);
+                            return <SkillBadge key={index} skill={skillData?.url || ""} />;
+                          })}
+                        </SkillWrapper>
                       </InnerArticleContentWrapper>
                     </InnerArticle>
                   );

@@ -1,107 +1,9 @@
-export const infoData = [
-  {
-    title: "Github",
-    subTitle: "깃허브",
-    link: "https://github.com/jeonghun94",
-  },
-  {
-    title: "LinkedIn",
-    subTitle: "블로그",
-    link: "https://www.linkedin.com/in/jeonghun-cho-6387ab23b/",
-  },
-];
-
-export const sideData = [
-  {
-    id: "section1",
-    section: "Work",
-    articles: [
-      {
-        id: "section1",
-        title: "청명씨앤아이",
-      },
-      {
-        id: "section2",
-        title: "파크로",
-      },
-    ],
-  },
-  {
-    id: "section2",
-    section: "Project",
-    articles: [
-      {
-        id: "section3",
-        title: "테오의 스프린트",
-      },
-      {
-        id: "section4",
-        title: "연차/당직 신청",
-      },
-      {
-        id: "section5",
-        title: "나만의 포토폴리오(현재 페이지)",
-      },
-    ],
-  },
-  {
-    id: "section3",
-    section: "Clone-Coding",
-    articles: [
-      {
-        id: "section6",
-        title: "당근마켓",
-      },
-      {
-        id: "section7",
-        title: "아이파킹(주차 관리 웹)",
-      },
-      {
-        id: "section8",
-        title: "마블(MARVLE) 페이지",
-      },
-      {
-        id: "section9",
-        title: "트위터",
-      },
-      {
-        id: "section10",
-        title: "인스타그램",
-      },
-    ],
-  },
-  {
-    id: "section4",
-    section: "Education",
-    articles: [
-      {
-        id: "section11",
-        title: "코스타(KOSTA) 자바 & 웹 교육 과정",
-      },
-    ],
-  },
-  {
-    id: "section5",
-    section: "Study",
-    articles: [
-      {
-        id: "section12",
-        title: "노마드 코더 웹기초 10주 챌린지",
-      },
-      {
-        id: "section13",
-        title: "노마드 코더 리액트 10주 챌린지",
-      },
-    ],
-  },
-];
-
 export const data = [
   {
     mainTitle: "Work",
     contents: [
       {
-        id: "section1",
+        id: "work1",
         subTitle: "정규직",
         innerTitle: "청명씨앤아이",
         icon: "🅿️",
@@ -121,13 +23,44 @@ export const data = [
             url: "https://www.cmni.co.kr/",
           },
         ],
-        techStack: [
-          ["Java", "Spring", "Oracle"],
-          ["JavaScript", "Vue.js"],
+        skills: [
+          {
+            skillId: 1,
+          },
+          {
+            skillId: 2,
+          },
+          {
+            skillId: 3,
+          },
+          {
+            skillId: 4,
+          },
+          {
+            skillId: 5,
+          },
+          {
+            skillId: 6,
+          },
+          {
+            skillId: 7,
+          },
+          {
+            skillId: 8,
+          },
+          {
+            skillId: 9,
+          },
+          {
+            skillId: 10,
+          },
+          {
+            skillId: 11,
+          },
         ],
       },
       {
-        id: "section2",
+        id: "work2",
         subTitle: "정규직",
         innerTitle: "파크로",
         icon: "🅿️",

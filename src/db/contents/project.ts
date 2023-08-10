@@ -19,6 +19,7 @@ export const projects = [
             url: "https://github.com/Sprint15th/chu_card-client",
           },
         ],
+        images: [],
         skills: [
           {
             skillId: 12,
@@ -50,6 +51,7 @@ export const projects = [
             url: "https://github.com/jeonghun94/portfolio",
           },
         ],
+        images: [],
         skills: [
           {
             skillId: 12,

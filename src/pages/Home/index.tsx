@@ -4,6 +4,7 @@ import bg from "@/assets/bg.jpg";
 import { AiOutlineCheck } from "react-icons/ai";
 import { IoMdLink } from "react-icons/io";
 import { FaPencilAlt } from "react-icons/fa";
+import { FaImages } from "react-icons/fa";
 import { containerVariants, linkVariants } from "../../utils/constants";
 import SkillBadge from "../../components/SkillBadge";
 import { skills } from "../../db/skill";
@@ -360,6 +361,22 @@ const SkillWrapper = styled.div`
   gap: 5px;
 `;
 
+const InnerArticleImageWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+`;
+
+const InnerArticleImage = styled.img`
+  width: 300px;
+  height: 180px;
+  margin-top: 20px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+`;
+
 const Home = () => {
   return (
     <Wrapper>
@@ -452,6 +469,20 @@ const Home = () => {
                               </InnerArticleContent>
                             );
                           })}
+
+                        {item.images.length > 0 && (
+                          <>
+                            <InnerArticleContentTitle>
+                              <FaImages /> 관련이미지
+                            </InnerArticleContentTitle>
+
+                            <InnerArticleImageWrapper>
+                              {item.images.map((image, index) => {
+                                return <InnerArticleImage key={index} src={image.src} alt="image" draggable={false} />;
+                              })}
+                            </InnerArticleImageWrapper>
+                          </>
+                        )}
 
                         {item.links.length > 0 && (
                           <>

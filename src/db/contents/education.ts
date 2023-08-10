@@ -15,6 +15,7 @@ export const education = [
           "행안부 즉시감면 및 각 종 api 연동.",
         ],
         links: [],
+        images: [],
         skills: [
           {
             skillId: 1,

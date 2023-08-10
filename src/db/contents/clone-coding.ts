@@ -15,6 +15,7 @@ export const cloneCoding = [
           "행안부 즉시감면 및 각 종 api 연동.",
         ],
         links: [],
+        images: [],
         skills: [
           {
             skillId: 12,
@@ -58,6 +59,7 @@ export const cloneCoding = [
           "행안부 즉시감면 및 각 종 api 연동.",
         ],
         links: [],
+        images: [],
         skills: [
           {
             skillId: 12,
@@ -101,6 +103,7 @@ export const cloneCoding = [
           "행안부 즉시감면 및 각 종 api 연동.",
         ],
         links: [],
+        images: [],
         skills: [
           {
             skillId: 12,
@@ -138,6 +141,7 @@ export const cloneCoding = [
           "행안부 즉시감면 및 각 종 api 연동.",
         ],
         links: [],
+        images: [],
         skills: [
           {
             skillId: 12,
@@ -181,6 +185,7 @@ export const cloneCoding = [
           "행안부 즉시감면 및 각 종 api 연동.",
         ],
         links: [],
+        images: [],
         skills: [
           {
             skillId: 12,

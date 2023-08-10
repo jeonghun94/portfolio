@@ -14,6 +14,7 @@ export const study = [
           "행안부 즉시감면 및 각 종 api 연동.",
         ],
         links: [],
+        images: [],
         skills: [
           {
             skillId: 25,
@@ -59,6 +60,7 @@ export const study = [
           "node.js를 이용한 주차 관리 시스템 개발 및 유지보수",
         ],
         links: [],
+        images: [],
         skills: [
           {
             skillId: 12,

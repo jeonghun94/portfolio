@@ -1,3 +1,9 @@
+import daejeon from "@/assets/work/daejeon.png";
+import daejeon2 from "@/assets/work/daejeon2.png";
+import web from "@/assets/work/web.png";
+import web2 from "@/assets/work/web2.png";
+import web3 from "@/assets/work/web3.png";
+
 export const works = [
   {
     mainTitle: "Work",
@@ -16,6 +22,20 @@ export const works = [
           "대전광역시 주차 현황 시스템 유지보수.",
           "대전광역시 주차 통합 시스템 개발.",
           "행안부 즉시감면 및 각 종 api 연동.",
+        ],
+        images: [
+          {
+            id: 1,
+            src: daejeon,
+          },
+          {
+            id: 2,
+            src: daejeon2,
+          },
+          {
+            id: 3,
+            src: web,
+          },
         ],
         links: [],
         skills: [
@@ -65,6 +85,7 @@ export const works = [
           "node.js를 이용한 주차 관리 시스템 개발 및 유지보수",
         ],
         links: [],
+        images: [],
         skills: [
           {
             skillId: 1,

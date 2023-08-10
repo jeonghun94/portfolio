@@ -1,8 +1,6 @@
 import daejeon from "@/assets/work/daejeon.png";
 import daejeon2 from "@/assets/work/daejeon2.png";
 import web from "@/assets/work/web.png";
-import web2 from "@/assets/work/web2.png";
-import web3 from "@/assets/work/web3.png";
 
 export const works = [
   {

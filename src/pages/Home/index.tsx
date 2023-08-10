@@ -306,7 +306,8 @@ const InnerArticleContentTitle = styled.h3`
   gap: 5px;
   font-size: 1.5rem;
   font-weight: 800;
-  margin: 20px 0;
+  margin-top: 20px;
+  // margin: 20px 0;
 `;
 
 const InnerArticleLink = styled.a`
@@ -365,6 +366,7 @@ const InnerArticleImageWrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: flex-start;
+  margin-top: -20px;
   gap: 20px;
 `;
 
@@ -455,7 +457,14 @@ const Home = () => {
                   return (
                     <InnerArticle key={index}>
                       <InnerArticleSutTitle>{item.subTitle}</InnerArticleSutTitle>
-                      <InnerArticleTitle id={item.id}>{item.innerTitle}</InnerArticleTitle>
+                      <InnerArticleTitle
+                        id={item.id}
+                        style={{
+                          marginTop: !item.subTitle ? "-10px" : "",
+                        }}
+                      >
+                        {item.innerTitle}
+                      </InnerArticleTitle>
                       <InnerArticleIcon>{item.icon}</InnerArticleIcon>
                       <InnerArticleDate>{item.date}</InnerArticleDate>
 

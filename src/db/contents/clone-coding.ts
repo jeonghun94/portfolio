@@ -4,7 +4,7 @@ export const cloneCoding = [
     contents: [
       {
         id: "cloneCoding1",
-        subTitle: "클론코딩",
+        subTitle: "",
         innerTitle: "당근마켓",
         icon: "🥕",
         date: "2023년 1월 ~ 2023년 4월",
@@ -48,7 +48,7 @@ export const cloneCoding = [
       },
       {
         id: "cloneCoding2",
-        subTitle: "클론코딩",
+        subTitle: "",
         innerTitle: "아이파킹 (주차 관리 웹)",
         icon: "🅿️",
         date: "2023년 3월 ~ 2023년 4월",
@@ -92,7 +92,7 @@ export const cloneCoding = [
       },
       {
         id: "cloneCoding3",
-        subTitle: "클론코딩",
+        subTitle: "",
         innerTitle: "마블(MARVLE) 페이지",
         icon: "💥",
         date: "2023년 2월 ~ 2023년 2월",
@@ -130,7 +130,7 @@ export const cloneCoding = [
       },
       {
         id: "cloneCoding4",
-        subTitle: "클론코딩",
+        subTitle: "",
         innerTitle: "트위터",
         icon: "🐣",
         date: "2023년 4월 ~ 2023년 4월",
@@ -174,7 +174,7 @@ export const cloneCoding = [
       },
       {
         id: "cloneCoding5",
-        subTitle: "클론코딩",
+        subTitle: "",
         innerTitle: "인스타그램",
         icon: "📸",
         date: "2023년 7월 ~ 2023년 7월",

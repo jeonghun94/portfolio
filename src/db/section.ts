@@ -19,14 +19,10 @@ export const sections = [
     items: [
       {
         id: "project1",
-        title: "테오의 스프린트",
+        title: "츄카드 - 테오의 스프린트",
       },
       {
         id: "project2",
-        title: "연차/당직 신청",
-      },
-      {
-        id: "project3",
         title: "나만의 포토폴리오(현재 페이지)",
       },
     ],
@@ -57,16 +53,7 @@ export const sections = [
       },
     ],
   },
-  {
-    id: "education",
-    title: "Education",
-    items: [
-      {
-        id: "education1",
-        title: "코스타(KOSTA) 자바 & 웹 교육 과정",
-      },
-    ],
-  },
+
   {
     id: "study",
     title: "Study",
@@ -78,6 +65,16 @@ export const sections = [
       {
         id: "study2",
         title: "노마드 코더 리액트 10주 챌린지",
+      },
+    ],
+  },
+  {
+    id: "education",
+    title: "Education",
+    items: [
+      {
+        id: "education1",
+        title: "코스타(KOSTA) 자바 & 웹 교육 과정",
       },
     ],
   },

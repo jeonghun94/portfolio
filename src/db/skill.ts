@@ -124,4 +124,80 @@ export const skills = [
     name: "Node.js",
     url: "Node.js-339933?logo=Node.js",
   },
+  {
+    id: 26,
+    name: "Webpack",
+    url: "Webpack-8DD6F9?logo=Webpack",
+  },
+
+  {
+    id: 27,
+    name: "Babel",
+    url: "Babel-F9DC3E?logo=Babel",
+  },
+  {
+    id: 28,
+    name: "ESLint",
+    url: "ESLint-4B32C3?logo=ESLint",
+  },
+  {
+    id: 29,
+    name: "Prettier",
+    url: "Prettier-F7B93E?logo=Prettier",
+  },
+  {
+    id: 30,
+    name: "Git",
+    url: "Git-F05032?logo=Git",
+  },
+  {
+    id: 31,
+    name: "GitHub",
+    url: "GitHub-181717?logo=GitHub",
+  },
+  {
+    id: 32,
+    name: "Vercel",
+    url: "Vercel-000000?logo=Vercel",
+  },
+  {
+    id: 33,
+    name: "Netlify",
+    url: "Netlify-00C7B7?logo=Netlify",
+  },
+  {
+    id: 34,
+    name: "Heroku",
+    url: "Heroku-430098?logo=Heroku",
+  },
+  {
+    id: 35,
+    name: "Styled-components",
+    url: "Styled-components-DB7093?logo=styled-components",
+  },
+  {
+    id: 36,
+    name: "CloudFlare",
+    url: "CloudFlare-F38020?logo=CloudFlare",
+  },
+  {
+    id: 37,
+    name: "Prisma",
+    url: "Prisma-2D3748?logo=Prisma",
+  },
+  {
+    id: 38,
+    name: "PostgreSQL",
+    url: "PostgreSQL-4169E1?logo=PostgreSQL",
+  },
+  {
+    id: 39,
+    name: "MongoDB",
+    url: "MongoDB-47A248?logo=MongoDB",
+  },
+  {
+    id: 40,
+    name: "Spring",
+    url: "Spring-6DB33F?logo=Spring",
+  },
 ];

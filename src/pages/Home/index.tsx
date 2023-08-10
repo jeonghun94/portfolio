@@ -4,11 +4,12 @@ import bg from "@/assets/bg.jpg";
 import { AiOutlineCheck } from "react-icons/ai";
 import { IoMdLink } from "react-icons/io";
 import { FaPencilAlt } from "react-icons/fa";
-import { data, containerVariants, linkVariants } from "../../utils/constants";
+import { containerVariants, linkVariants } from "../../utils/constants";
 import SkillBadge from "../../components/SkillBadge";
 import { skills } from "../../db/skill";
 import { sections } from "../../db/section";
 import { infoLinks } from "../../db/infoLink";
+import { data } from "../../db/contents/index";
 
 const Wrapper = styled.div`
   display: flex;
@@ -240,6 +241,9 @@ const ArticleWrapper = styled.div`
 const Article = styled.article`
   width: 80%;
   height: auto;
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
 `;
 
 const ArticleTitle = styled.h2`
@@ -310,6 +314,18 @@ const InnerArticleLink = styled.a`
   gap: 5px;
   font-size: 1.3rem;
   text-decoration: underline;
+  width: fit-content;
+
+  h3 {
+    background: linear-gradient(to right, transparent 50%, #0079ff 50%);
+    background-size: 200%;
+    background-position: 0 0;
+    transition: 0.25s ease;
+
+    :hover {
+      background-position: -100% 0;
+    }
+  }
 `;
 
 const BlueAiOutlineCheck = styled(AiOutlineCheck)`
@@ -427,38 +443,44 @@ const Home = () => {
                       <InnerArticleDate>{item.date}</InnerArticleDate>
 
                       <InnerArticleContentWrapper>
-                        {item.description.map((item, index) => {
-                          return (
-                            <InnerArticleContent key={index}>
-                              <BlueAiOutlineCheck />
-                              {item}
-                            </InnerArticleContent>
-                          );
-                        })}
-
-                        <InnerArticleContentTitle>
-                          <LargeIoMdLink /> 관련링크들
-                        </InnerArticleContentTitle>
-
-                        {item.links.map((item, index) => {
-                          return (
-                            <InnerArticleLink href={item.url} key={index}>
-                              <BlueAiOutlineCheck />
-                              {item.name}
-                            </InnerArticleLink>
-                          );
-                        })}
-
-                        <InnerArticleContentTitle>
-                          <MiddelFaPencilAlt /> 사용기술들
-                        </InnerArticleContentTitle>
-
-                        <SkillWrapper>
-                          {item.skills?.map((skillId, index) => {
-                            const skillData = skills.find((item) => item.id === skillId.skillId);
-                            return <SkillBadge key={index} skill={skillData?.url || ""} />;
+                        {item.description.length > 0 &&
+                          item.description.map((item, index) => {
+                            return (
+                              <InnerArticleContent key={index}>
+                                <BlueAiOutlineCheck />
+                                {item}
+                              </InnerArticleContent>
+                            );
                           })}
-                        </SkillWrapper>
+
+                        {item.links.length > 0 && (
+                          <>
+                            <InnerArticleContentTitle>
+                              <LargeIoMdLink /> 관련링크
+                            </InnerArticleContentTitle>
+                            {item.links.map((link, index) => (
+                              <InnerArticleLink key={index} href={link.url} target="_blank">
+                                <BlueAiOutlineCheck />
+                                <h3>{link.name}</h3>
+                              </InnerArticleLink>
+                            ))}
+                          </>
+                        )}
+
+                        {item.skills.length > 0 && (
+                          <>
+                            <InnerArticleContentTitle>
+                              <MiddelFaPencilAlt /> 사용기술
+                            </InnerArticleContentTitle>
+
+                            <SkillWrapper>
+                              {item.skills.map((skill, index) => {
+                                const skillData = skills.find((item) => item.id === skill.skillId);
+                                return <SkillBadge key={index} skill={skillData?.url || ""} />;
+                              })}
+                            </SkillWrapper>
+                          </>
+                        )}
                       </InnerArticleContentWrapper>
                     </InnerArticle>
                   );

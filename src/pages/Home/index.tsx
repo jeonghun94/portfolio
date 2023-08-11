@@ -318,6 +318,11 @@ const InnerArticleLink = styled.a`
   text-decoration: underline;
   width: fit-content;
 
+  &:hover {
+    color: white;
+    text-decoration-color: white;
+  }
+
   h3 {
     background: linear-gradient(to right, transparent 50%, #0079ff 50%);
     background-size: 200%;

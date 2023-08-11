@@ -4,7 +4,7 @@ export const study = [
     contents: [
       {
         id: "study1",
-        subTitle: "스터디",
+        subTitle: "",
         innerTitle: "노마드 코더 웹기초 10주 스터디",
         icon: "📚",
         date: "2023년 1월2일 ~ 2022년 3월13일",
@@ -50,7 +50,7 @@ export const study = [
       },
       {
         id: "study2",
-        subTitle: "스터디",
+        subTitle: "",
         innerTitle: "노마드 코더 리액트 10주 스터디",
         icon: "📚",
         date: "2023년 2월6일 ~ 2023년 4월17일, 2023년 5월15일 ~ 2023년 7월24일",

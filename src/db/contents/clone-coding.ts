@@ -9,12 +9,24 @@ export const cloneCoding = [
         icon: "🥕",
         date: "2023년 1월 ~ 2023년 4월",
         description: [
-          "웹 개발자로서 주차 관리 시스템 제공",
-          "할인 시스템 및 주차 현황 관리 시스템 개발.",
-          "PG사와의 연동을 통한 주차 할인 및 정기권 결제 시스템 개발.",
-          "행안부 즉시감면 및 각 종 api 연동.",
+          "당근마켓 앱을 모바일 웹 형태로 Next.js로 구현",
+          "회원가입, 로그인 상품 등록, 상품 관리, 좋아요, 댓글 등록, 채팅 등의 기능 구현",
+          "Prisma와 Pscale(MySql) 이용하여 데이터베이스 구축",
+          "useSWR을 이용하여 데이터 Fetching 및 SSR을 이용하여 SEO 최적화",
+          "TypeScript를 이용하여 타입 정의",
+          "Tailwind CSS를 이용하여 UI 구현",
+          "Cloudflare(이미지) + Vercel을 이용하여 배포",
         ],
-        links: [],
+        links: [
+          {
+            name: "Vercel 배포 링크",
+            url: "https://new-carrot-market-jeonghun94.vercel.app/",
+          },
+          {
+            name: "해당 GitHub Repository",
+            url: "https://github.com/jeonghun94/new-carrot-market",
+          },
+        ],
         images: [],
         skills: [
           {
@@ -53,12 +65,18 @@ export const cloneCoding = [
         icon: "🅿️",
         date: "2023년 3월 ~ 2023년 4월",
         description: [
-          "웹 개발자로서 주차 관리 시스템 제공",
-          "할인 시스템 및 주차 현황 관리 시스템 개발.",
-          "PG사와의 연동을 통한 주차 할인 및 정기권 결제 시스템 개발.",
-          "행안부 즉시감면 및 각 종 api 연동.",
+          "주차 플랫폼 아이파킹(IParking) 서비스 Next.js로 구현",
+          "Prisma와 MySql 이용하여 데이터베이스 구축",
+          "TypeScript를 이용하여 타입 정의 및 SSR을 이용하여 SEO 최적화",
+          "Tailwind CSS를 이용하여 UI 구현",
+          "Cloudflare(이미지) + Vercel을 이용하여 배포",
         ],
-        links: [],
+        links: [
+          {
+            name: "해당 GitHub Repository",
+            url: "https://github.com/jeonghun94/iparking",
+          },
+        ],
         images: [],
         skills: [
           {
@@ -97,12 +115,21 @@ export const cloneCoding = [
         icon: "💥",
         date: "2023년 2월 ~ 2023년 2월",
         description: [
-          "웹 개발자로서 주차 관리 시스템 제공",
-          "할인 시스템 및 주차 현황 관리 시스템 개발.",
-          "PG사와의 연동을 통한 주차 할인 및 정기권 결제 시스템 개발.",
-          "행안부 즉시감면 및 각 종 api 연동.",
+          "마블공식 홈페이지를 React + TypeScript로 구현",
+          "React-Router를 이용하여 페이지 이동 구현",
+          "Styled-Components 및 ChacraUI 이용하여 UI 구현",
+          "Netlify를 이용하여 배포",
         ],
-        links: [],
+        links: [
+          {
+            name: "Vercel 배포 링크",
+            url: "https://airbnb-final-jeonghun94.vercel.app/",
+          },
+          {
+            name: "해당 GitHub Repository",
+            url: "https://github.com/jeonghun94/airbnb-final",
+          },
+        ],
         images: [],
         skills: [
           {
@@ -135,12 +162,24 @@ export const cloneCoding = [
         icon: "🐣",
         date: "2023년 4월 ~ 2023년 4월",
         description: [
-          "웹 개발자로서 주차 관리 시스템 제공",
-          "할인 시스템 및 주차 현황 관리 시스템 개발.",
-          "PG사와의 연동을 통한 주차 할인 및 정기권 결제 시스템 개발.",
-          "행안부 즉시감면 및 각 종 api 연동.",
+          "트위터 앱을 모바일 웹 형태로 Next.js로 구현",
+          "깃허브 OAuth를 이용하여 로그인 구현",
+          "회원가입, 로그인, 프로필, 트윗 등록, 트윗 좋아요, 댓글 등록, 팔로우, 팔로잉 등의 기능 구현",
+          "Prisma와 Pscale(MySql) 이용하여 데이터베이스 구축",
+          "TypeScript를 이용하여 타입 정의 및 SSR을 이용하여 SEO 최적화",
+          "Tailwind CSS를 이용하여 UI 및 시스템 설정 다크 모드 구현",
+          "Cloudflare(이미지) + Vercel을 이용하여 배포",
         ],
-        links: [],
+        links: [
+          {
+            name: "Vercel 배포 링크",
+            url: "https://twitter-carrot-w5bt-jeonghun94.vercel.app/",
+          },
+          {
+            name: "해당 GitHub Repository",
+            url: "https://github.com/jeonghun94/twitter",
+          },
+        ],
         images: [],
         skills: [
           {
@@ -179,12 +218,25 @@ export const cloneCoding = [
         icon: "📸",
         date: "2023년 7월 ~ 2023년 7월",
         description: [
-          "웹 개발자로서 주차 관리 시스템 제공",
-          "할인 시스템 및 주차 현황 관리 시스템 개발.",
-          "PG사와의 연동을 통한 주차 할인 및 정기권 결제 시스템 개발.",
-          "행안부 즉시감면 및 각 종 api 연동.",
+          "인스타그램 앱을 모바일 웹 형태로 Next.js로 구현",
+          "회원가입 및 로그인, 프로필, 피드 등록, 피드 좋아요, 저장, 댓글 등록, 팔로우, 팔로잉 등의 기능 구현",
+          "깃허브 OAuth를 이용하여 로그인 구현",
+          "Framer Motion을 이용하여 애니메이션 구현",
+          "Prisma와 Pscale(MySql) 이용하여 데이터베이스 구축",
+          "TypeScript를 이용하여 타입 정의 및 SSR을 이용하여 SEO 최적화",
+          "Tailwind CSS를 이용하여 UI 구현",
+          "Cloudflare(이미지) + Vercel을 이용하여 배포",
         ],
-        links: [],
+        links: [
+          {
+            name: "Vercel 배포 링크",
+            url: "https://next-instagram-jeonghun94.vercel.app/login",
+          },
+          {
+            name: "해당 GitHub Repository",
+            url: "https://github.com/jeonghun94/next-instagram",
+          },
+        ],
         images: [],
         skills: [
           {

@@ -1,3 +1,7 @@
+import marvel from "@/assets/clone-coding/marvel.png";
+import marvel2 from "@/assets/clone-coding/marvel2.png";
+import marvel3 from "@/assets/clone-coding/marvel3.png";
+
 export const cloneCoding = [
   {
     mainTitle: "Clone-Coding",
@@ -108,55 +112,9 @@ export const cloneCoding = [
           },
         ],
       },
+
       {
         id: "cloneCoding3",
-        subTitle: "",
-        innerTitle: "마블(MARVLE) 페이지",
-        icon: "💥",
-        date: "2023년 2월 ~ 2023년 2월",
-        description: [
-          "마블공식 홈페이지를 React + TypeScript로 구현",
-          "React-Router를 이용하여 페이지 이동 구현",
-          "Styled-Components 및 ChacraUI 이용하여 UI 구현",
-          "Netlify를 이용하여 배포",
-        ],
-        links: [
-          {
-            name: "Vercel 배포 링크",
-            url: "https://airbnb-final-jeonghun94.vercel.app/",
-          },
-          {
-            name: "해당 GitHub Repository",
-            url: "https://github.com/jeonghun94/airbnb-final",
-          },
-        ],
-        images: [],
-        skills: [
-          {
-            skillId: 12,
-          },
-          {
-            skillId: 13,
-          },
-          {
-            skillId: 14,
-          },
-          {
-            skillId: 16,
-          },
-          {
-            skillId: 19,
-          },
-          {
-            skillId: 21,
-          },
-          {
-            skillId: 32,
-          },
-        ],
-      },
-      {
-        id: "cloneCoding4",
         subTitle: "",
         innerTitle: "트위터",
         icon: "🐣",
@@ -212,7 +170,7 @@ export const cloneCoding = [
         ],
       },
       {
-        id: "cloneCoding5",
+        id: "cloneCoding4",
         subTitle: "",
         innerTitle: "인스타그램",
         icon: "📸",
@@ -262,6 +220,66 @@ export const cloneCoding = [
           },
           {
             skillId: 36,
+          },
+          {
+            skillId: 32,
+          },
+        ],
+      },
+      {
+        id: "cloneCoding5",
+        subTitle: "",
+        innerTitle: "마블(MARVLE) 페이지",
+        icon: "💥",
+        date: "2023년 2월 ~ 2023년 2월",
+        description: [
+          "마블공식 홈페이지를 React + TypeScript로 구현",
+          "React-Router를 이용하여 페이지 이동 구현",
+          "Styled-Components 및 ChacraUI 이용하여 UI 구현",
+          "Netlify를 이용하여 배포",
+        ],
+        links: [
+          {
+            name: "Vercel 배포 링크",
+            url: "https://airbnb-final-jeonghun94.vercel.app/",
+          },
+          {
+            name: "해당 GitHub Repository",
+            url: "https://github.com/jeonghun94/airbnb-final",
+          },
+        ],
+        images: [
+          {
+            id: 1,
+            src: marvel,
+          },
+          {
+            id: 2,
+            src: marvel2,
+          },
+          {
+            id: 3,
+            src: marvel3,
+          },
+        ],
+        skills: [
+          {
+            skillId: 12,
+          },
+          {
+            skillId: 13,
+          },
+          {
+            skillId: 14,
+          },
+          {
+            skillId: 16,
+          },
+          {
+            skillId: 19,
+          },
+          {
+            skillId: 21,
           },
           {
             skillId: 32,

@@ -1,6 +1,17 @@
 import marvel from "@/assets/clone-coding/marvel.png";
 import marvel2 from "@/assets/clone-coding/marvel2.png";
 import marvel3 from "@/assets/clone-coding/marvel3.png";
+import carrot from "@/assets/clone-coding/carrot.png";
+import carrot2 from "@/assets/clone-coding/carrot2.png";
+import carrot3 from "@/assets/clone-coding/carrot3.png";
+import carrot4 from "@/assets/clone-coding/carrot4.png";
+import twitter from "@/assets/clone-coding/twitter.png";
+import twitter2 from "@/assets/clone-coding/twitter2.png";
+import twitter3 from "@/assets/clone-coding/twitter3.png";
+import insta from "@/assets/clone-coding/insta.png";
+import insta2 from "@/assets/clone-coding/insta2.png";
+import insta3 from "@/assets/clone-coding/insta3.png";
+import insta4 from "@/assets/clone-coding/insta4.png";
 
 export const cloneCoding = [
   {
@@ -31,7 +42,28 @@ export const cloneCoding = [
             url: "https://github.com/jeonghun94/new-carrot-market",
           },
         ],
-        images: [],
+        images: [
+          {
+            id: 1,
+            src: carrot,
+            isVertical: true,
+          },
+          {
+            id: 2,
+            src: carrot2,
+            isVertical: true,
+          },
+          {
+            id: 3,
+            src: carrot3,
+            isVertical: true,
+          },
+          {
+            id: 4,
+            src: carrot4,
+            isVertical: true,
+          },
+        ],
         skills: [
           {
             skillId: 12,
@@ -138,7 +170,23 @@ export const cloneCoding = [
             url: "https://github.com/jeonghun94/twitter",
           },
         ],
-        images: [],
+        images: [
+          {
+            id: 1,
+            src: twitter,
+            isVertical: true,
+          },
+          {
+            id: 2,
+            src: twitter2,
+            isVertical: true,
+          },
+          {
+            id: 3,
+            src: twitter3,
+            isVertical: true,
+          },
+        ],
         skills: [
           {
             skillId: 12,
@@ -195,7 +243,28 @@ export const cloneCoding = [
             url: "https://github.com/jeonghun94/next-instagram",
           },
         ],
-        images: [],
+        images: [
+          {
+            id: 1,
+            src: insta,
+            isVertical: true,
+          },
+          {
+            id: 2,
+            src: insta2,
+            isVertical: true,
+          },
+          {
+            id: 3,
+            src: insta3,
+            isVertical: true,
+          },
+          {
+            id: 4,
+            src: insta4,
+            isVertical: true,
+          },
+        ],
         skills: [
           {
             skillId: 12,
@@ -252,14 +321,17 @@ export const cloneCoding = [
           {
             id: 1,
             src: marvel,
+            isVertical: false,
           },
           {
             id: 2,
             src: marvel2,
+            isVertical: false,
           },
           {
             id: 3,
             src: marvel3,
+            isVertical: false,
           },
         ],
         skills: [

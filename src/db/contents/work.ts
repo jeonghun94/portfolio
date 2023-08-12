@@ -25,14 +25,17 @@ export const works = [
           {
             id: 1,
             src: daejeon,
+            isVertical: false,
           },
           {
             id: 2,
             src: daejeon2,
+            isVertical: false,
           },
           {
             id: 3,
             src: web,
+            isVertical: false,
           },
         ],
         links: [],

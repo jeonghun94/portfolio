@@ -375,11 +375,12 @@ const InnerArticleImageWrapper = styled.div`
   gap: 20px;
 `;
 
-const InnerArticleImage = styled.img`
-  width: 300px;
-  height: 180px;
+const InnerArticleImage = styled(motion.img)<{ isVertical?: boolean }>`
+  width: ${(props) => (props.isVertical ? "220" : "300")}px;
+  height: ${(props) => (props.isVertical ? "350" : "180")}px;
+  object-fit: ${(props) => (props.isVertical ? "fill" : "cover")};
+  margin-right: ${(props) => (props.isVertical ? "10" : "0")}px;
   margin-top: 20px;
-  object-fit: cover;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
@@ -492,7 +493,15 @@ const Home = () => {
 
                             <InnerArticleImageWrapper>
                               {item.images.map((image, index) => {
-                                return <InnerArticleImage key={index} src={image.src} alt="image" draggable={false} />;
+                                return (
+                                  <InnerArticleImage
+                                    key={index}
+                                    src={image.src}
+                                    alt="image"
+                                    draggable={false}
+                                    isVertical={image?.isVertical}
+                                  />
+                                );
                               })}
                             </InnerArticleImageWrapper>
                           </>

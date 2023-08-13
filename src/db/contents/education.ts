@@ -9,10 +9,8 @@ export const education = [
         icon: "📖",
         date: "2018년 2월 ~ 2022년 6월",
         description: [
-          "웹 개발자로서 주차 관리 시스템 제공",
-          "할인 시스템 및 주차 현황 관리 시스템 개발.",
-          "아파트 방문자 관리 시스템 개발.",
-          "행안부 즉시감면 및 각 종 api 연동.",
+          "4개월 가량의 기간 동안 자바, 웹, JSP 취업 교육 과정을 수료",
+          "Java, JSP, Oracle, Spring, HCJ, jQuery, Ajax, MyBatis 등을 학습",
         ],
         links: [],
         images: [],

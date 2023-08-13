@@ -12,6 +12,10 @@ import insta from "@/assets/clone-coding/insta.png";
 import insta2 from "@/assets/clone-coding/insta2.png";
 import insta3 from "@/assets/clone-coding/insta3.png";
 import insta4 from "@/assets/clone-coding/insta4.png";
+import iparking from "@/assets/clone-coding/iparking.png";
+import iparking2 from "@/assets/clone-coding/iparking2.png";
+import iparking3 from "@/assets/clone-coding/iparking3.png";
+import iparking4 from "@/assets/clone-coding/iparking4.png";
 
 export const cloneCoding = [
   {
@@ -113,7 +117,28 @@ export const cloneCoding = [
             url: "https://github.com/jeonghun94/iparking",
           },
         ],
-        images: [],
+        images: [
+          {
+            id: 1,
+            src: iparking,
+            isVertical: true,
+          },
+          {
+            id: 2,
+            src: iparking2,
+            isVertical: true,
+          },
+          {
+            id: 3,
+            src: iparking3,
+            isVertical: true,
+          },
+          {
+            id: 4,
+            src: iparking4,
+            isVertical: true,
+          },
+        ],
         skills: [
           {
             skillId: 12,

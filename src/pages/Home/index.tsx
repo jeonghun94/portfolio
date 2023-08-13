@@ -376,10 +376,10 @@ const InnerArticleImageWrapper = styled.div`
 `;
 
 const InnerArticleImage = styled(motion.img)<{ isVertical?: boolean }>`
-  width: ${(props) => (props.isVertical ? "220" : "300")}px;
-  height: ${(props) => (props.isVertical ? "350" : "180")}px;
-  object-fit: ${(props) => (props.isVertical ? "fill" : "cover")};
+  width: ${(props) => (props.isVertical ? "225" : "335")}px;
+  height: ${(props) => (props.isVertical ? "380" : "225")}px;
   margin-right: ${(props) => (props.isVertical ? "10" : "0")}px;
+  object-fit: "fill";
   margin-top: 20px;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

@@ -41,15 +41,15 @@ export const sections = [
       },
       {
         id: "cloneCoding3",
-        title: "마블(MARVLE) 페이지",
-      },
-      {
-        id: "cloneCoding4",
         title: "트위터",
       },
       {
-        id: "cloneCoding5",
+        id: "cloneCoding4",
         title: "인스타그램",
+      },
+      {
+        id: "cloneCoding5",
+        title: "마블(MARVLE) 페이지",
       },
     ],
   },

@@ -11,6 +11,7 @@ import { skills } from "../../db/skill";
 import { sections } from "../../db/section";
 import { infoLinks } from "../../db/infoLink";
 import { data } from "../../db/contents/index";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -78,13 +79,18 @@ const SectionTitle = styled.h3`
   margin: 10px 0;
 `;
 
-const SectionContent = styled(motion.a)`
+const SectionContent = styled.h3<{ isActive: boolean }>`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: rgb(110, 110, 110);
+  color: ${(props) => (props.isActive ? "#0079FF" : "rgb(110, 110, 110)")};
   font-size: 13px;
   gap: 5px;
+  cursor: pointer;
+
+  :hover {
+    color: #0079ff;
+  }
 `;
 
 const IntroWrapper = styled.div`
@@ -221,6 +227,7 @@ const ArticleWrapper = styled.div`
   overflow-y: scroll;
   box-sizing: border-box;
   background-color: white;
+  scroll-behavior: smooth;
   z-index: 1;
 
   @media (max-width: 992px) {
@@ -386,6 +393,43 @@ const InnerArticleImage = styled(motion.img)<{ isVertical?: boolean }>`
 `;
 
 const Home = () => {
+  const [activeTitle, setActiveTitle] = useState<string>("");
+
+  const handletTitleClick = (e: React.MouseEvent<HTMLHeadingElement>, title: string) => {
+    const {
+      currentTarget: { id },
+    } = e;
+    setActiveTitle(title);
+
+    const innerArticleTitle = document.querySelectorAll(".innerArticleTitle");
+    const innerArticleTitleArray = Array.from(innerArticleTitle);
+    const innerArticleTitleArrayMap = innerArticleTitleArray.map((item) => item.id);
+    innerArticleTitleArrayMap.forEach((item, index) => {
+      if (item === id) {
+        innerArticleTitleArray[index].scrollIntoView();
+      }
+    });
+  };
+
+  // document.querySelector(".articleWrapper") 부분을 스크롤할때 innerArticleTitle의 innerTitle값을 가져와서 setActiveTitle함수를 통해 activeTitle을 변경해주는 로직
+
+  // useEffect(() => {
+  //   const articleWrapper = document.querySelector(".articleWrapper");
+  //   const innerArticleTitle = document.querySelectorAll(".innerArticleTitle");
+  //   const innerArticleTitleArray = Array.from(innerArticleTitle);
+  //   const innerArticleTitleArrayMap = innerArticleTitleArray.map((item) => item.innerHTML);
+
+  //   articleWrapper?.addEventListener("scroll", () => {
+  //     innerArticleTitleArrayMap.forEach((item, index) => {
+  //       console.log(item);
+  //       if (item === activeTitle) {
+  //         innerArticleTitleArray[index].scrollIntoView();
+  //         setActiveTitle(item);
+  //       }
+  //     });
+  //   });
+  // }, [activeTitle]);
+
   return (
     <Wrapper>
       <ProfileWrapper>
@@ -435,11 +479,10 @@ const Home = () => {
                 {item.items.map((item, index) => {
                   return (
                     <SectionContent
+                      id={item.id}
                       key={index}
-                      href={`#${item.id}`}
-                      whileHover={{
-                        color: "#0079FF",
-                      }}
+                      isActive={activeTitle === item.title}
+                      onClick={(e) => handletTitleClick(e, item.title)}
                     >
                       <Dot />
                       <span>{item.title}</span>
@@ -451,7 +494,7 @@ const Home = () => {
           })}
         </SideBar>
 
-        <ArticleWrapper>
+        <ArticleWrapper className="articleWrapper">
           {data.map((item, index) => {
             return (
               <Article key={index}>
@@ -465,6 +508,7 @@ const Home = () => {
                       <InnerArticleSutTitle>{item.subTitle}</InnerArticleSutTitle>
                       <InnerArticleTitle
                         id={item.id}
+                        className="innerArticleTitle"
                         style={{
                           marginTop: !item.subTitle ? "-10px" : "",
                         }}

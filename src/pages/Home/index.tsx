@@ -6,12 +6,13 @@ import { IoMdLink } from "react-icons/io";
 import { FaPencilAlt } from "react-icons/fa";
 import { FaImages } from "react-icons/fa";
 import { containerVariants, linkVariants } from "../../utils/constants";
-import SkillBadge from "../../components/SkillBadge";
-import { skills } from "../../db/skill";
 import { sections } from "../../db/section";
 import { infoLinks } from "../../db/infoLink";
 import { data } from "../../db/contents/index";
 import { useEffect, useState } from "react";
+import SideBar from "../../components/SideBar";
+import Skills from "../../components/Skill";
+import Section from "../../components/Section";
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,7 +21,6 @@ const Wrapper = styled.div`
 `;
 
 const ProfileWrapper = styled.div`
-  // position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -41,56 +41,6 @@ const ContentWrapper = styled.div`
   height: 100vh;
   display: flex;
   background-color: white;
-`;
-
-const SideBar = styled.div<{ bgColor?: string }>`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 20%;
-  height: 100vh;
-  padding: 100px 75px;
-  box-sizing: border-box;
-  background-color: ${(props) => props.bgColor || "transparent"};
-
-  @media (max-width: 992px) {
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-
-  @media (max-width: 576px) {
-    display: none;
-  }
-`;
-
-const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  gap: 5px;
-`;
-
-const SectionTitle = styled.h3`
-  font-size: 1.1rem;
-  font-weight: 800;
-  margin: 10px 0;
-`;
-
-const SectionContent = styled.h3<{ isActive: boolean }>`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: ${(props) => (props.isActive ? "#0079FF" : "rgb(110, 110, 110)")};
-  font-size: 13px;
-  gap: 5px;
-  cursor: pointer;
-
-  :hover {
-    color: #0079ff;
-  }
 `;
 
 const IntroWrapper = styled.div`
@@ -155,7 +105,7 @@ const IntroDescription = styled.h5`
   }
 `;
 
-const Dot = styled.div`
+export const Dot = styled.div`
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -314,7 +264,6 @@ const InnerArticleContentTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 800;
   margin-top: 20px;
-  // margin: 20px 0;
 `;
 
 const InnerArticleLink = styled.a`
@@ -367,13 +316,6 @@ const BackgroundImg = styled.img`
   object-fit: cover;
 `;
 
-const SkillWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-`;
-
 const InnerArticleImageWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -394,22 +336,6 @@ const InnerArticleImage = styled(motion.img)<{ isVertical?: boolean }>`
 
 const Home = () => {
   const [activeTitle, setActiveTitle] = useState<string>("");
-
-  const handletTitleClick = (e: React.MouseEvent<HTMLHeadingElement>, title: string) => {
-    const {
-      currentTarget: { id },
-    } = e;
-    setActiveTitle(title);
-
-    const innerArticleTitle = document.querySelectorAll(".innerArticleTitle");
-    const innerArticleTitleArray = Array.from(innerArticleTitle);
-    const innerArticleTitleArrayMap = innerArticleTitleArray.map((item) => item.id);
-    innerArticleTitleArrayMap.forEach((item, index) => {
-      if (item === id) {
-        innerArticleTitleArray[index].scrollIntoView();
-      }
-    });
-  };
 
   const handleScroll = () => {
     const articleWrapper = document.querySelector(".articleWrapper");
@@ -432,12 +358,6 @@ const Home = () => {
     if (closestTitle !== null) {
       setActiveTitle(closestTitle);
     }
-
-    // const scrollBottom = articleWrapper.scrollHeight - articleWrapper.scrollTop === articleWrapper.clientHeight;
-    // if (scrollBottom) {
-    //   console.log("바닥입니다");
-    //   setActiveTitle("코스타(KOSTA) 자바 & 웹 교육 과정");
-    // }
   };
 
   useEffect(() => {
@@ -494,26 +414,7 @@ const Home = () => {
 
       <ContentWrapper>
         <SideBar bgColor={"#F9FAFB"}>
-          {sections.map((item, index) => {
-            return (
-              <Section key={index}>
-                <SectionTitle>{item.title}</SectionTitle>
-                {item.items.map((item, index) => {
-                  return (
-                    <SectionContent
-                      id={item.id}
-                      key={index}
-                      isActive={activeTitle === item.title}
-                      onClick={(e) => handletTitleClick(e, item.title)}
-                    >
-                      <Dot />
-                      <span>{item.title}</span>
-                    </SectionContent>
-                  );
-                })}
-              </Section>
-            );
-          })}
+          <Section sections={sections} activeTitle={activeTitle} setActiveTitle={setActiveTitle} />
         </SideBar>
 
         <ArticleWrapper className="articleWrapper">
@@ -593,12 +494,7 @@ const Home = () => {
                               <MiddelFaPencilAlt /> 사용기술
                             </InnerArticleContentTitle>
 
-                            <SkillWrapper>
-                              {item.skills.map((skill, index) => {
-                                const skillData = skills.find((item) => item.id === skill.skillId);
-                                return <SkillBadge key={index} skill={skillData?.url || ""} />;
-                              })}
-                            </SkillWrapper>
+                            <Skills skills={item.skills} />
                           </>
                         )}
                       </InnerArticleContentWrapper>

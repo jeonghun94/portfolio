@@ -5,9 +5,7 @@ type State = {
   setActiveTitle: (title: string) => void;
 };
 
-const useStore = create<State>((set) => ({
+export const useTitleStore = create<State>((set) => ({
   activeTitle: "",
   setActiveTitle: (title: string) => set({ activeTitle: title }),
 }));
-
-export default useStore;

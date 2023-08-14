@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import S from "./style";
 import Content from "../../components/Content";
 import Profile from "../../components/Profile";
-import useStore from "../../store/state";
+import { useTitleStore } from "../../store/state";
 
 const Home = () => {
-  const { setActiveTitle } = useStore();
+  const { setActiveTitle } = useTitleStore();
 
   const handleScroll = () => {
     const articleWrapper = document.querySelector(".articleWrapper");

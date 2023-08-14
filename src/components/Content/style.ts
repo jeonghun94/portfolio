@@ -130,7 +130,7 @@ const S = {
     }
   `,
   InnerArticleImageWrapper: styled.div`
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: flex-start;
     margin-top: -20px;

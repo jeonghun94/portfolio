@@ -94,7 +94,7 @@ const S = {
     }
 
     @media (max-width: 576px) {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
   `,
   InnerArticleContentTitle: styled.h3`
@@ -130,7 +130,7 @@ const S = {
     }
   `,
   InnerArticleImageWrapper: styled.div`
-    width: 100vw;
+    width: 92vw;
     display: flex;
     align-items: flex-start;
     margin-top: -20px;

@@ -130,23 +130,26 @@ const S = {
     }
   `,
   InnerArticleImageWrapper: styled.div`
-    width: 92vw;
+    width: 100%;
     display: flex;
     align-items: flex-start;
     margin-top: -20px;
     gap: 20px;
 
     @media (max-width: 992px) {
+      width: 95vw;
       overflow-x: scroll;
     }
 
-    // @media (max-width: 768px) {
-    //   overflow-x: scroll;
-    // }
+    @media (max-width: 768px) {
+      width: 94vw;
+      overflow-x: scroll;
+    }
 
-    // @media (max-width: 576px) {
-    //   overflow-x: scroll;
-    // }
+    @media (max-width: 576px) {
+      width: 92vw;
+      overflow-x: scroll;
+    }
   `,
   InnerArticleImage: styled(motion.img)<{ isVertical?: boolean }>`
     width: ${(props) => (props.isVertical ? "225" : "335")}px;

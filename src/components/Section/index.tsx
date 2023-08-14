@@ -1,5 +1,6 @@
-import { Dot } from "../../pages/Home";
 import S from "./style";
+import useStore from "../../store/state";
+import { Dot } from "../Icons";
 
 interface ItemProps {
   id: string;
@@ -12,13 +13,8 @@ interface SectionProps {
   items: ItemProps[];
 }
 
-interface Props {
-  sections: SectionProps[];
-  activeTitle: string;
-  setActiveTitle: (title: string) => void;
-}
-
-const Section = ({ sections, activeTitle, setActiveTitle }: Props) => {
+const Section = ({ sections }: { sections: SectionProps[] }) => {
+  const { activeTitle, setActiveTitle } = useStore();
   const handletTitleClick = (e: React.MouseEvent<HTMLHeadingElement>, title: string) => {
     const {
       currentTarget: { id },

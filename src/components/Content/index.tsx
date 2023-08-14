@@ -1,22 +1,17 @@
+import S from "./style";
 import Section from "../Section";
 import SideBar from "../SideBar";
 import { sections } from "../../db/section";
 import { data } from "../../db/contents/index";
-import S from "./style";
-import { BlueAiOutlineCheck, BlueDot, LargeIoMdLink, MiddelFaPencilAlt } from "../../pages/Home";
+import { BlueAiOutlineCheck, BlueDot, LargeIoMdLink, MiddelFaPencilAlt } from "../Icons";
 import { FaImages } from "react-icons/fa";
 import Skills from "../Skill";
 
-interface ContentProps {
-  activeTitle: string;
-  setActiveTitle: (activeTitle: string) => void;
-}
-
-const Content = ({ activeTitle, setActiveTitle }: ContentProps) => {
+const Content = () => {
   return (
     <S.Wrapper>
       <SideBar bgColor={"#F9FAFB"}>
-        <Section sections={sections} activeTitle={activeTitle} setActiveTitle={setActiveTitle} />
+        <Section sections={sections} />
       </SideBar>
 
       <S.ArticleWrapper className="articleWrapper">

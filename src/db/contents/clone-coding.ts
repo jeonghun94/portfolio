@@ -101,7 +101,7 @@ export const cloneCoding = [
       {
         id: "cloneCoding2",
         subTitle: "",
-        innerTitle: "아이파킹 (주차 관리 웹)",
+        innerTitle: "아이파킹(주차 관리 웹)",
         icon: "🅿️",
         date: "2023년 3월 ~ 2023년 4월",
         description: [

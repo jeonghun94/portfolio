@@ -19,11 +19,11 @@ export const sections = [
     items: [
       {
         id: "project1",
-        title: "츄카드 - 테오의 스프린트",
+        title: "츄카드",
       },
       {
         id: "project2",
-        title: "나만의 포토폴리오(현재 페이지)",
+        title: "나만의 포트폴리오",
       },
     ],
   },
@@ -60,11 +60,11 @@ export const sections = [
     items: [
       {
         id: "study1",
-        title: "노마드 코더 웹기초 10주 챌린지",
+        title: "노마드 코더 웹 기초 10주 스터디",
       },
       {
         id: "study2",
-        title: "노마드 코더 리액트 10주 챌린지",
+        title: "노마드 코더 리액트 10주 스터디",
       },
     ],
   },

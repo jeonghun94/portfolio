@@ -411,25 +411,47 @@ const Home = () => {
     });
   };
 
-  // document.querySelector(".articleWrapper") 부분을 스크롤할때 innerArticleTitle의 innerTitle값을 가져와서 setActiveTitle함수를 통해 activeTitle을 변경해주는 로직
+  const handleScroll = () => {
+    const articleWrapper = document.querySelector(".articleWrapper");
+    if (!articleWrapper) return;
+    const innerArticleTitles = document.querySelectorAll(".innerArticleTitle");
+    let closestTitle: string | null = null;
+    let closestDistance = Number.POSITIVE_INFINITY;
 
-  // useEffect(() => {
-  //   const articleWrapper = document.querySelector(".articleWrapper");
-  //   const innerArticleTitle = document.querySelectorAll(".innerArticleTitle");
-  //   const innerArticleTitleArray = Array.from(innerArticleTitle);
-  //   const innerArticleTitleArrayMap = innerArticleTitleArray.map((item) => item.innerHTML);
+    innerArticleTitles.forEach((titleElement) => {
+      const innerTitle = titleElement.textContent?.trim();
+      if (innerTitle) {
+        const distance = Math.abs(titleElement.getBoundingClientRect().top);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestTitle = innerTitle;
+        }
+      }
+    });
 
-  //   articleWrapper?.addEventListener("scroll", () => {
-  //     innerArticleTitleArrayMap.forEach((item, index) => {
-  //       console.log(item);
-  //       if (item === activeTitle) {
-  //         innerArticleTitleArray[index].scrollIntoView();
-  //         setActiveTitle(item);
-  //       }
-  //     });
-  //   });
-  // }, [activeTitle]);
+    if (closestTitle !== null) {
+      setActiveTitle(closestTitle);
+    }
 
+    // const scrollBottom = articleWrapper.scrollHeight - articleWrapper.scrollTop === articleWrapper.clientHeight;
+    // if (scrollBottom) {
+    //   console.log("바닥입니다");
+    //   setActiveTitle("코스타(KOSTA) 자바 & 웹 교육 과정");
+    // }
+  };
+
+  useEffect(() => {
+    const articleWrapper = document.querySelector(".articleWrapper");
+    if (articleWrapper) {
+      articleWrapper.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (articleWrapper) {
+        articleWrapper.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
   return (
     <Wrapper>
       <ProfileWrapper>

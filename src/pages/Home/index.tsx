@@ -4,15 +4,11 @@ import bg from "@/assets/bg.jpg";
 import { AiOutlineCheck } from "react-icons/ai";
 import { IoMdLink } from "react-icons/io";
 import { FaPencilAlt } from "react-icons/fa";
-import { FaImages } from "react-icons/fa";
 import { containerVariants, linkVariants } from "../../utils/constants";
-import { sections } from "../../db/section";
 import { infoLinks } from "../../db/infoLink";
-import { data } from "../../db/contents/index";
 import { useEffect, useState } from "react";
 import SideBar from "../../components/SideBar";
-import Skills from "../../components/Skill";
-import Section from "../../components/Section";
+import Content from "../../components/Content";
 
 const Wrapper = styled.div`
   display: flex;
@@ -34,13 +30,6 @@ const ProfileIntroduceWrapper = styled.div`
   align-items: center;
   background-color: black;
   color: white;
-`;
-
-const ContentWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  background-color: white;
 `;
 
 const IntroWrapper = styled.div`
@@ -113,7 +102,7 @@ export const Dot = styled.div`
   background-color: rgb(110, 110, 110);
 `;
 
-const BlueDot = styled.div<{ size?: number; marginBottom?: number }>`
+export const BlueDot = styled.div<{ size?: number; marginBottom?: number }>`
   width: ${(props) => (props.size ? props.size : "10")}px;
   height: ${(props) => (props.size ? props.size : "10")}px;
   border-radius: 50%;
@@ -170,138 +159,17 @@ const InfoBottom = styled.div`
   color: white;
 `;
 
-const ArticleWrapper = styled.div`
-  width: 80%;
-  height: 100vh;
-  padding: 60px;
-  overflow-y: scroll;
-  box-sizing: border-box;
-  background-color: white;
-  scroll-behavior: smooth;
-  z-index: 1;
-
-  @media (max-width: 992px) {
-    width: 100%;
-    padding: 10px 20px;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 10px 20px;
-  }
-
-  @media (max-width: 576px) {
-    width: 100%;
-    padding: 10px 20px;
-  }
-`;
-
-const Article = styled.article`
-  width: 80%;
-  height: auto;
-  &:not(:first-child) {
-    margin-top: 30px;
-  }
-`;
-
-const ArticleTitle = styled.h2`
-  font-size: 3.5rem;
-  font-weight: 800;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  border-bottom: 5px solid #0079ff;
-  display: flex;
-  gap: 5px;
-`;
-
-const InnerArticle = styled.article`
-  width: 100%;
-  height: auto;
-  margin-top: 50px;
-  box-sizing: border-box;
-`;
-
-const InnerArticleSutTitle = styled.h4`
-  font-size: 1.3rem;
-`;
-
-const InnerArticleTitle = styled.h3`
-  display: inline-block;
-  margin: 20px 0;
-  font-size: 2rem;
-  font-weight: 800;
-  padding-bottom: 3px;
-  border-bottom: 3px solid black;
-`;
-
-const InnerArticleIcon = styled.span`
-  font-size: 2rem;
-  margin-left: 20px;
-`;
-
-const InnerArticleDate = styled.h4`
-  font-size: 1.15rem;
-`;
-
-const InnerArticleContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 20px 0;
-`;
-
-const InnerArticleContent = styled.h4`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 1.3rem;
-`;
-
-const InnerArticleContentTitle = styled.h3`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-top: 20px;
-`;
-
-const InnerArticleLink = styled.a`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 1.3rem;
-  text-decoration: underline;
-  width: fit-content;
-
-  &:hover {
-    color: white;
-    text-decoration-color: white;
-  }
-
-  h3 {
-    background: linear-gradient(to right, transparent 50%, #0079ff 50%);
-    background-size: 200%;
-    background-position: 0 0;
-    transition: 0.25s ease;
-
-    :hover {
-      background-position: -100% 0;
-    }
-  }
-`;
-
-const BlueAiOutlineCheck = styled(AiOutlineCheck)`
+export const BlueAiOutlineCheck = styled(AiOutlineCheck)`
   color: #0079ff;
   margin-top: -3px;
 `;
 
-const LargeIoMdLink = styled(IoMdLink)`
+export const LargeIoMdLink = styled(IoMdLink)`
   margin-top: -2.5px;
   font-size: 1.5rem;
 `;
 
-const MiddelFaPencilAlt = styled(FaPencilAlt)`
+export const MiddelFaPencilAlt = styled(FaPencilAlt)`
   margin-top: -4px;
   font-size: 1.15rem;
 `;
@@ -314,24 +182,6 @@ const BackgroundImg = styled.img`
   height: 100vh;
   opacity: 0.3;
   object-fit: cover;
-`;
-
-const InnerArticleImageWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  margin-top: -20px;
-  gap: 20px;
-`;
-
-const InnerArticleImage = styled(motion.img)<{ isVertical?: boolean }>`
-  width: ${(props) => (props.isVertical ? "225" : "335")}px;
-  height: ${(props) => (props.isVertical ? "380" : "225")}px;
-  margin-right: ${(props) => (props.isVertical ? "10" : "0")}px;
-  object-fit: "fill";
-  margin-top: 20px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 const Home = () => {
@@ -412,100 +262,7 @@ const Home = () => {
         <BackgroundImg src={`${bg}`} alt="bg" draggable={false} />
       </ProfileWrapper>
 
-      <ContentWrapper>
-        <SideBar bgColor={"#F9FAFB"}>
-          <Section sections={sections} activeTitle={activeTitle} setActiveTitle={setActiveTitle} />
-        </SideBar>
-
-        <ArticleWrapper className="articleWrapper">
-          {data.map((item, index) => {
-            return (
-              <Article key={index}>
-                <ArticleTitle>
-                  {item.mainTitle}
-                  <BlueDot />
-                </ArticleTitle>
-                {item.contents.map((item, index) => {
-                  return (
-                    <InnerArticle key={index}>
-                      <InnerArticleSutTitle>{item.subTitle}</InnerArticleSutTitle>
-                      <InnerArticleTitle
-                        id={item.id}
-                        className="innerArticleTitle"
-                        style={{
-                          marginTop: !item.subTitle ? "-10px" : "",
-                        }}
-                      >
-                        {item.innerTitle}
-                      </InnerArticleTitle>
-                      <InnerArticleIcon>{item.icon}</InnerArticleIcon>
-                      <InnerArticleDate>{item.date}</InnerArticleDate>
-
-                      <InnerArticleContentWrapper>
-                        {item.description.length > 0 &&
-                          item.description.map((item, index) => {
-                            return (
-                              <InnerArticleContent key={index}>
-                                <BlueAiOutlineCheck />
-                                {item}
-                              </InnerArticleContent>
-                            );
-                          })}
-
-                        {item.images.length > 0 && (
-                          <>
-                            <InnerArticleContentTitle>
-                              <FaImages /> 관련이미지
-                            </InnerArticleContentTitle>
-
-                            <InnerArticleImageWrapper>
-                              {item.images.map((image, index) => {
-                                return (
-                                  <InnerArticleImage
-                                    key={index}
-                                    src={image.src}
-                                    alt="image"
-                                    draggable={false}
-                                    isVertical={image?.isVertical}
-                                  />
-                                );
-                              })}
-                            </InnerArticleImageWrapper>
-                          </>
-                        )}
-
-                        {item.links.length > 0 && (
-                          <>
-                            <InnerArticleContentTitle>
-                              <LargeIoMdLink /> 관련링크
-                            </InnerArticleContentTitle>
-                            {item.links.map((link, index) => (
-                              <InnerArticleLink key={index} href={link.url} target="_blank">
-                                <BlueAiOutlineCheck />
-                                <h3>{link.name}</h3>
-                              </InnerArticleLink>
-                            ))}
-                          </>
-                        )}
-
-                        {item.skills.length > 0 && (
-                          <>
-                            <InnerArticleContentTitle>
-                              <MiddelFaPencilAlt /> 사용기술
-                            </InnerArticleContentTitle>
-
-                            <Skills skills={item.skills} />
-                          </>
-                        )}
-                      </InnerArticleContentWrapper>
-                    </InnerArticle>
-                  );
-                })}
-              </Article>
-            );
-          })}
-        </ArticleWrapper>
-      </ContentWrapper>
+      <Content activeTitle={activeTitle} setActiveTitle={setActiveTitle} />
     </Wrapper>
   );
 };

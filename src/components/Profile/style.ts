@@ -6,6 +6,18 @@ const S = {
     width: 100%;
     height: 100vh;
     display: flex;
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    @media (max-width: 576px) {
+      display: none;
+    }
   `,
   InfoWrapper: styled.div`
     height: 100%;
@@ -125,6 +137,18 @@ const S = {
     height: 100vh;
     opacity: 0.3;
     object-fit: cover;
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    @media (max-width: 576px) {
+      display: none;
+    }
   `,
 };
 

@@ -84,6 +84,18 @@ const S = {
     align-items: center;
     gap: 5px;
     font-size: 1.3rem;
+
+    @media (max-width: 992px) {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 0.9rem;
+    }
   `,
   InnerArticleContentTitle: styled.h3`
     display: flex;
@@ -123,6 +135,18 @@ const S = {
     align-items: flex-start;
     margin-top: -20px;
     gap: 20px;
+
+    @media (max-width: 992px) {
+      overflow-x: scroll;
+    }
+
+    // @media (max-width: 768px) {
+    //   overflow-x: scroll;
+    // }
+
+    // @media (max-width: 576px) {
+    //   overflow-x: scroll;
+    // }
   `,
   InnerArticleImage: styled(motion.img)<{ isVertical?: boolean }>`
     width: ${(props) => (props.isVertical ? "225" : "335")}px;

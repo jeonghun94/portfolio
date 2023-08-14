@@ -1,12 +1,11 @@
-import { useEffect } from "react";
 import S from "./style";
-import Content from "../../components/Content";
-import Profile from "../../components/Profile";
+import { useEffect } from "react";
 import { useTitleStore } from "../../store/state";
+import Profile from "../../components/Profile";
+import Content from "../../components/Content";
 
 const Home = () => {
   const { setActiveTitle } = useTitleStore();
-
   const handleScroll = () => {
     const articleWrapper = document.querySelector(".articleWrapper");
     if (!articleWrapper) return;
@@ -42,6 +41,7 @@ const Home = () => {
       }
     };
   }, []);
+
   return (
     <S.Wrapper>
       <Profile />

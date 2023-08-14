@@ -1,3 +1,7 @@
+import chu from "@/assets/project/chu.png";
+import chu2 from "@/assets/project/chu2.png";
+import chu3 from "@/assets/project/chu3.png";
+
 export const projects = [
   {
     mainTitle: "Project",
@@ -15,11 +19,31 @@ export const projects = [
         ],
         links: [
           {
-            name: "깃 허브",
+            name: "Vercel 배포 링크",
+            url: "https://chu-card-client.vercel.app/",
+          },
+          {
+            name: "해당 GitHub Repository",
             url: "https://github.com/Sprint15th/chu_card-client",
           },
         ],
-        images: [],
+        images: [
+          {
+            id: 1,
+            src: chu,
+            isVertical: true,
+          },
+          {
+            id: 2,
+            src: chu2,
+            isVertical: true,
+          },
+          {
+            id: 3,
+            src: chu3,
+            isVertical: true,
+          },
+        ],
         skills: [
           {
             skillId: 12,
@@ -47,7 +71,7 @@ export const projects = [
         description: ["나만의 포트폴리오를 가지기 위해서 개발"],
         links: [
           {
-            name: "깃허브",
+            name: "해당 GitHub Repository",
             url: "https://github.com/jeonghun94/portfolio",
           },
         ],

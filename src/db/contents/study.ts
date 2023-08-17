@@ -76,18 +76,18 @@ export const study = [
         date: "2023년 2월6일 ~ 2023년 4월17일, 2023년 5월15일 ~ 2023년 7월24일",
         description: [
           "10주간 리액트 스터디를 진행 및 React, Next.js, TypeScript 등을 학습",
-          "영화 정보 제공 웹, 영화 캐락터 정보 제공 웹, 가상화폐 정보 제공 웹, 넷플릭스 클론코딩 등의 프로젝트를 진행",
+          "영화 정보 제공 웹, 영화 캐릭터 정보 제공 웹, 가상화폐 정보 제공 웹, 넷플릭스 클론코딩 등의 프로젝트를 진행",
           "Prisma + PlanetScale를 이용한 데이터베이스 구축 및 Next.Js(SSR)을 이용한 데이터베이스 연동",
         ],
         links: [
           {
             id: 1,
-            name: "영화 캐락터 API를 이용한 정보 제공 웹 V1",
+            name: "영화 캐릭터 API를 이용한 정보 제공 웹 V1",
             url: "https://codesandbox.io/s/react-app-blueprint-forked-b7vjm4?file=/src/App.js",
           },
           {
             id: 2,
-            name: "영화 캐락터 API를 이용한 정보 제공 웹 V2",
+            name: "영화 캐릭터 API를 이용한 정보 제공 웹 V2",
             url: "https://codesandbox.io/s/react-app-blueprint-forked-qviuzz",
           },
           {
